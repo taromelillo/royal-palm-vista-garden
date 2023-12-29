@@ -3,25 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
+  /* --color-main: #0e4444; */
+  --color-main: #092a2a;
+  /* --color-accent: #dfab00; */
+  --color-accent: #c3b792;
+  --color-primary: #cfdbd5;
+  --color-secondary: #242423;
+  --color-alter-secondary: #333533;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-main: #092a2a;
+    --color-accent: #c3b792;
+    --color-primary: #242423;
+    --color-secondary: #cfdbd5;
+    --color-alter-secondary: #333533;
   }
 }
 
+.bg-main {
+  background-color: var(--color-main);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-main {
+  color: var(--color-main);
+}
+
+.text-accent {
+  color: var(--color-main);
+}
+
+.btn {
+  @apply px-4 bg-accent text-white p-1.5 rounded;
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  color: var(--color-accent);
+  background-color: var(--color-secondary);
+  /* background: linear-gradient( 
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
