@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-size: border-box;
+}
+
 :root {
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,28 +31,52 @@
   }
 }
 
-.bg-main {
-  background-color: var(--color-main);
+.animation-reveal {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
 }
 
-.bg-accent {
-  background-color: var(--color-accent);
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.bg-primary {
-  background-color: var(--color-primary);
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bg-secondary {
-  background-color: var(--color-secondary);
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-pagination-bullet {
+  background-color: var(--color-main) !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  color: var(--color-main) !important;
 }
 
-.text-main {
-  color: var(--color-main);
-}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 100px;
+  }
 
-.text-accent {
-  color: var(--color-accent);
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .btn {

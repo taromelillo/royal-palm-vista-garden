@@ -15,7 +15,21 @@ const config: Config = {
       },
       colors: {
         main: { DEFAULT: '#092a2a' },
-        accent: { DEFAULT: '#c3b792' }
+        accent: { DEFAULT: '#c3b792' },
+        'black-rgba': 'rgba(0,0,0, .54)'  
+      },
+      lineHeight: {
+        'extra-loose': '2.5',
+        '12': '3.5rem',
+      },
+      translate: {
+        'center': '-50%'
+      },
+      fill: {
+        'main': 'black'
+      },
+      stroke: {
+        'accent': 'black'
       }
     },
   },
