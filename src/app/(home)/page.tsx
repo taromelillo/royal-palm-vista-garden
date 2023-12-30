@@ -2,9 +2,11 @@ import Slider from '@/components/ui/slider/Slider';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-14">
-      <h1>Royal Palm Vista Garden</h1>
-      <section className="py-8">
+    <div className="flex min-h-screen flex-col items-center justify-between">
+      <div className="flex w-full bg-main  rounded overflow-hidden">
+        <img src="assets/rpvg2.jpg" alt="" className="w-full" />
+      </div>
+      <section className="py-8 p-14">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           dictum vitae ex ut pellentesque. In tincidunt leo ac laoreet
@@ -30,7 +32,7 @@ export default function Home() {
         </p>
       </section>
       <Slider />
-      <button className="btn">Press Me</button>
+      {/* <button className="btn">Press Me</button> */}
     </div>
   );
 }

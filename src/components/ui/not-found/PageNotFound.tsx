@@ -1,11 +1,15 @@
+import { title_alt } from '@/config/fonts';
 import Link from 'next/link';
+import { IoLeafOutline } from 'react-icons/io5';
 
 export function PageNotFound() {
   return (
-    <div className="flex flex-col m-10 h-screen justify-between">
-      <h1>PageNotFound</h1>
-
-      <Link href="/">Regresar</Link>
+    <div className="flex flex-col m-10 h-screen justify-center items-center align-middle">
+      <h2 className={`${title_alt.className} text-7xl`}>404</h2>
+      <Link href="/" className="flex items-center gap-2">
+        <IoLeafOutline size={33} />
+        <span className="text-xl">Regresar</span>
+      </Link>
     </div>
   );
 }

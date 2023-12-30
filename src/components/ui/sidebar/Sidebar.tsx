@@ -3,7 +3,12 @@
 import { useUIStore } from '@/store';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { IoChatbubbleOutline, IoCloseOutline } from 'react-icons/io5';
+import {
+  IoCalendarClearOutline,
+  IoChatbubbleOutline,
+  IoCloseOutline,
+} from 'react-icons/io5';
+import { Title } from '@/components';
 
 export function Sidebar() {
   const isSideMenuOpened = useUIStore((state) => state.isSideMenuOpened);
@@ -33,7 +38,7 @@ export function Sidebar() {
       <nav
         //todo: slide effect
         className={clsx(
-          'fixed p-5 right-0 top-0 w-full sm:w-[500px] h-screen text-main bg-secondary z-20 shadow-2xl transform transition-all duration-300',
+          'fixed p-5 right-0 top-0 w-full sm:w-[500px] h-screen text-accent bg-black z-20 shadow-2xl transform transition-all duration-300',
           {
             'translate-x-full': !isSideMenuOpened,
           }
@@ -45,16 +50,26 @@ export function Sidebar() {
             className="absolute top-5 right-5 cursor-pointer"
             onClick={() => closeMenu()}
           />
-          <h1>Royal Palm Vista Garden</h1>
+          <Title title="CS Royal Palm Vista Garden" />
+          {/* <h1>CS Royal Palm Vista Garden</h1> */}
         </div>
 
-        <div className="w-full h-px bg-black my-5" />
+        <div className="w-full h-px bg-accent my-5" />
         <div className="relative mt-14">
           <Link
-            href="/"
-            className="flex items-center mt-10 p-2 hover:bg-gray-300 rounded transition-all gap-2 font-bold"
+            href="/book"
+            className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
+            onClick={closeMenu}
           >
-            <IoChatbubbleOutline />
+            <IoCalendarClearOutline size={22} />
+            <span>Book</span>
+          </Link>
+          <Link
+            href="/"
+            className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
+            onClick={closeMenu}
+          >
+            <IoChatbubbleOutline size={22} />
             <span>FAQ</span>
           </Link>
         </div>

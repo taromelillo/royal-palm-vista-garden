@@ -46,7 +46,7 @@
 }
 
 .text-accent {
-  color: var(--color-main);
+  color: var(--color-accent);
 }
 
 .btn {
@@ -54,7 +54,8 @@
 }
 body {
   color: var(--color-accent);
-  background-color: var(--color-secondary);
+  /* background-color: var(--color-secondary); */
+  background-color: black;
   /* background: linear-gradient( 
       to bottom,
       transparent,
