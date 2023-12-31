@@ -1,17 +1,18 @@
-'use client';
-import { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-import { slider } from '@/assets';
-import {
-  IoChevronBack,
-  IoChevronForward,
-  IoEllipseOutline,
-} from 'react-icons/io5';
-import clsx from 'clsx';
+"use client";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "./swiper.css";
+import { slider } from "@/assets";
+// import {
+//   IoChevronBack,
+//   IoChevronForward,
+//   IoEllipseOutline,
+// } from "react-icons/io5";
+// import clsx from "clsx";
 
 export function Slider() {
   const [imageIndex, setImageIndex] = useState(0);
@@ -31,22 +32,23 @@ export function Slider() {
   };
 
   return (
-    <div className=" w-full h-[500px] md:h-[700px]  relative">
+    <div className=" w-full h-[500px] lg:h-[550px]  relative">
       {/* Images */}
 
       <Swiper
-        // className="w-full h-full"
+        className="w-full h-full mySwiper"
         pagination={true}
-        modules={[Pagination]}
+        navigation={true}
+        modules={[Pagination, Navigation]}
       >
         {slider.map((url, i) => {
           return (
             <SwiperSlide
-              // className="w-full h-full flex flex-row cursor-grab text-center justify-center items-center"
+              className="w-full h-full flex flex-row cursor-grab text-center justify-center items-center"
               key={i}
             >
               <img
-                // className="w-full h-full object-cover block transition-all duration-300 ease-in-out"
+                className="w-full h-full object-cover block transition-all duration-300 ease-in-out"
                 src={url}
                 alt=""
               />
@@ -68,7 +70,7 @@ export function Slider() {
       </div> */}
 
       {/* Buttons */}
-      <button
+      {/* <button
         onClick={prevImage}
         className="absolute top-0 bottom-0 p-[1rem] unset pointer text-white font-bold left-0 hover:bg-black-rgba transition-all duration-300 ease-in-out"
       >
@@ -79,28 +81,28 @@ export function Slider() {
         className="absolute top-0 bottom-0 p-[1rem] unset pointer text-white font-bold right-0 hover:bg-black-rgba transition-all duration-300 ease-in-out"
       >
         <IoChevronForward size={43} />
-      </button>
+      </button> */}
 
       {/* Controls */}
-      <div className="absolute bottom-4 left-1/2 translate-x-center flex gap-2">
+      {/* <div className="absolute bottom-4 left-1/2 translate-x-center flex gap-2">
         {slider.map((_, index) => {
           return (
             <button
               key={index}
               onClick={() => setImageIndex(index)}
-              className={clsx('w-4 h-4 rounded-xl bg-black outline-none', {
-                'bg-main': index === imageIndex,
+              className={clsx("w-4 h-4 rounded-xl bg-black outline-none", {
+                "bg-main": index === imageIndex,
               })}
             >
               <IoEllipseOutline
-                className={clsx('w-full h-full fill-accent', {
-                  'fill-accent': index === imageIndex,
+                className={clsx("w-full h-full fill-accent", {
+                  "fill-accent": index === imageIndex,
                 })}
               />
             </button>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { slider } from '@/assets';
-import { Slider } from '@/components';
+import { slider } from "@/assets";
+import { Slider } from "@/components";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         <Slider />
       </div>
       <section className="flex flex-col-reverse md:flex-row w-full md:px-10 animation-reveal">
-        <article className=" md:w-1/2 tracking-widest leading-12 flex items-center px-8">
+        <article className="tracking-normal bg-red-900 md:w-1/2 tracking-widest md:bg-green-200 leading-12 flex items-center px-8">
           <p className="text-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
             dictum vitae ex ut pellentesque. In tincidunt leo ac laoreet

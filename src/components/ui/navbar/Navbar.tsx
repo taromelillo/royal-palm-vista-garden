@@ -1,9 +1,9 @@
-'use client';
-import Link from 'next/link';
-import { title, title_alt } from '@/config/fonts';
-import { useUIStore } from '@/store';
-import { IoMenuOutline } from 'react-icons/io5';
-import styles from './Navbar.module.css';
+"use client";
+import Link from "next/link";
+import { title_alt } from "@/config/fonts";
+import { useUIStore } from "@/store";
+import { IoMenuOutline } from "react-icons/io5";
+import styles from "./Navbar.module.css";
 
 export function Navbar() {
   const openMenu = useUIStore((state) => state.openSideMenu);
@@ -27,15 +27,17 @@ export function Navbar() {
       <div className="flex items-center gap-4 ">
         <Link
           href="/book"
-          className="hidden md:flex items-center p-2 hover:bg-main rounded transition-all"
+          className="hidden md:flex items-center p-2 rounded transition-all"
         >
           Book
         </Link>
         <Link
           href="/faq"
-          className="hidden md:flex items-center p-2 hover:bg-main rounded  transition-all"
+          className="hidden md:flex items-center rounded transition-all"
         >
-          FAQ
+          <span className="p-2 hover:border-b border-bottom border-solid border-accent transition-all duration-300">
+            FAQ
+          </span>
         </Link>
 
         <IoMenuOutline
