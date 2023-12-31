@@ -4,6 +4,7 @@ import { title_alt } from "@/config/fonts";
 import { useUIStore } from "@/store";
 import { IoMenuOutline } from "react-icons/io5";
 import styles from "./Navbar.module.css";
+import { Button } from "@/components";
 
 export function Navbar() {
   const openMenu = useUIStore((state) => state.openSideMenu);
@@ -25,21 +26,8 @@ export function Navbar() {
       </nav>
 
       <div className="flex items-center gap-4 ">
-        <Link
-          href="/book"
-          className="hidden md:flex items-center p-2 rounded transition-all"
-        >
-          Book
-        </Link>
-        <Link
-          href="/faq"
-          className="hidden md:flex items-center rounded transition-all"
-        >
-          <span className="p-2 hover:border-b border-bottom border-solid border-accent transition-all duration-300">
-            FAQ
-          </span>
-        </Link>
-
+        <Button path="/book" name="Book" />
+        <Button path="/faq" name="FAQ" />
         <IoMenuOutline
           className="flex md:hidden"
           size={39}
