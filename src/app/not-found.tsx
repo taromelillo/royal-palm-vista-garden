@@ -1,8 +1,8 @@
-import { PageNotFound } from '@/components';
+import { PageNotFound } from "@/components";
 
 export default function PageComponentName() {
   return (
-    <div className="p-2">
+    <div className="w-screen h-screen">
       <PageNotFound />
     </div>
   );

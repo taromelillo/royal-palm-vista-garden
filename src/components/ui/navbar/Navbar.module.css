@@ -2,7 +2,8 @@
   animation: enhance-header linear both;
   animation-timeline: scroll(root);
   animation-range: 0 100px;
-  z-index: 2;
+  background-color: black;
+  z-index: 50;
 }
 
 @keyframes enhance-header {
