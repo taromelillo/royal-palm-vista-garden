@@ -1,23 +1,21 @@
-import { slider } from "@/assets";
-import { Slider } from "@/components";
+import { slider } from '@/assets';
+import { Slider } from '@/components';
 
 export default function Home() {
   return (
-    <div className="flex w-full flex-col items-center justify-center my-2 gap-24">
+    <div className="flex w-full flex-col items-center justify-center my-2 gap-4">
       <div className="w-full h-[800px]">
         <Slider />
       </div>
       <section className="flex flex-col-reverse md:flex-row w-full md:px-10 animation-reveal">
-        <article className="tracking-normal bg-red-900 md:w-1/2 tracking-widest md:bg-green-200 leading-12 flex items-center px-8">
+        <article className="h-[500px] tracking-normal sm:leading-10 md:w-1/2 lg:leading-12 flex flex-col justify-center  md:justify-evenly items-center px-8 gap-4">
+          <h2 className="text-xl">Lorem ipsum dolor sit amet</h2>
           <p className="text-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
             dictum vitae ex ut pellentesque. In tincidunt leo ac laoreet
             efficitur. Nunc auctor varius tellus. Sed nec justo nec diam feugiat
             congue. Phasellus vitae ligula nibh. Curabitur imperdiet enim sed
-            orci scelerisque iaculis. Morbi porta dui euismod facilisis gravida.
-            Sed ut enim eget massa pulvinar mattis sit amet in ex. Aenean a enim
-            interdum nunc lobortis ultricies sed ullamcorper lectus. Ut
-            consectetur sit amet eros eu fringilla.
+            orci scelerisque iaculis.
           </p>
         </article>
         <div className="flex justify-center h-[500px] md:w-1/2 rounded overflow-hidden">
@@ -29,16 +27,14 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col-reverse md:flex-row-reverse w-full md:px-10 animation-reveal">
-        <article className=" md:w-1/2 tracking-widest leading-12 flex items-center px-8">
+        <article className="h-[500px] px-8 sm:px-24 md:px-8 tracking-normal sm:leading-10 md:w-1/2 lg:leading-12 flex flex-col justify-center  md:justify-evenly items-center gap-4">
+          <h2 className="text-xl">Lorem ipsum dolor sit amet</h2>
           <p className="text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
             dictum vitae ex ut pellentesque. In tincidunt leo ac laoreet
             efficitur. Nunc auctor varius tellus. Sed nec justo nec diam feugiat
             congue. Phasellus vitae ligula nibh. Curabitur imperdiet enim sed
-            orci scelerisque iaculis. Morbi porta dui euismod facilisis gravida.
-            Sed ut enim eget massa pulvinar mattis sit amet in ex. Aenean a enim
-            interdum nunc lobortis ultricies sed ullamcorper lectus. Ut
-            consectetur sit amet eros eu fringilla.
+            orci scelerisque iaculis.
           </p>
         </article>
         <div className="flex justify-center h-[500px] md:w-1/2 rounded overflow-hidden">

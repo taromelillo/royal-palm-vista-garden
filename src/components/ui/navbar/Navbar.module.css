@@ -3,7 +3,7 @@
   animation-timeline: scroll(root);
   animation-range: 0 100px;
   background-color: black;
-  z-index: 50;
+  z-index: 10;
 }
 
 @keyframes enhance-header {

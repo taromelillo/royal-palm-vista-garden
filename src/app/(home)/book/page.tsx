@@ -1,5 +1,5 @@
-import { slider } from "@/assets";
-import { Calendar, Title } from "@/components";
+import { slider } from '@/assets';
+import { Calendar, Checkout, Title } from '@/components';
 
 export default function Book() {
   return (
@@ -24,16 +24,17 @@ export default function Book() {
           src={`${slider[0]}`}
           className="object-cover object-center absolute top-0 left-0 bottom-0"
           style={{
-            width: "100%",
-            height: "25rem",
-            WebkitMaskImage: "linear-gradient(rgb(0 0 0 / 1), transparent)",
-            maskImage: "linear-gradient(rgb(0 0 0 / 1), transparent)",
+            width: '100%',
+            height: '25rem',
+            WebkitMaskImage: 'linear-gradient(rgb(0 0 0 / 1), transparent)',
+            maskImage: 'linear-gradient(rgb(0 0 0 / 1), transparent)',
           }}
           alt=""
         />
       </div>
       {/* <Title title="Book now" /> */}
       <Calendar />
+      <Checkout />
     </div>
   );
 }

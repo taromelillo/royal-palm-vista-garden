@@ -1,5 +1,5 @@
-import Link from "next/link";
-import "./Button.css";
+import Link from 'next/link';
+import './Button.css';
 
 interface ButtonProps {
   path: string;
@@ -9,11 +9,9 @@ interface ButtonProps {
 export const Button = ({ path, name }: ButtonProps) => {
   return (
     <div>
-      <div>
-        <Link href={path} className="text-accent font-bold link">
-          {name}
-        </Link>
-      </div>
+      <Link href={path} className="text-accent font-bold link">
+        {name}
+      </Link>
     </div>
   );
 };
