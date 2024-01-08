@@ -1,4 +1,4 @@
-import { IoLogoFacebook } from "react-icons/io5";
+import { IoLogoFacebook } from 'react-icons/io5';
 
 export const Footer = () => {
   return (
@@ -7,7 +7,11 @@ export const Footer = () => {
       // style={{boxShadow: }}
     >
       CS Royal Palm Vista Garden
-      <IoLogoFacebook className="text-accent" size={33} />
+      <a href="https://www.facebook.com/Royalpalmvistagarden/">
+        <span>
+          <IoLogoFacebook className="text-accent" size={33} />
+        </span>
+      </a>
     </footer>
   );
 };

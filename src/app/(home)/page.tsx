@@ -9,7 +9,9 @@ export default function Home() {
       </div>
       <section className="flex flex-col-reverse md:flex-row w-full md:px-10 animation-reveal">
         <article className="h-[500px] tracking-normal sm:leading-10 md:w-1/2 lg:leading-12 flex flex-col justify-center  md:justify-evenly items-center px-8 gap-4">
-          <h2 className="text-xl">Lorem ipsum dolor sit amet</h2>
+          <h2 className="text-xl">
+            Your own city escape paradise at the heart of the City!
+          </h2>
           <p className="text-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
             dictum vitae ex ut pellentesque. In tincidunt leo ac laoreet

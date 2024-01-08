@@ -37,6 +37,29 @@
   animation-range: entry 20% cover 30%;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: none;
+  opacity: 0.5;
+  /* border-radius: 5px; */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
+}
 @keyframes reveal {
   from {
     opacity: 0;

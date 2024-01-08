@@ -10,7 +10,7 @@ export const CheckoutForm = () => {
   return (
     <form
       //   onSubmit={handleSubmit}
-      className="w-full h-full flex flex-col p-[1rem] justify-evenly items-center gap-8"
+      className="w-full h-full flex flex-col md:p-[3rem] justify-between items-center gap-8"
     >
       {/* <p>Day's not selected</p> */}
       <input
@@ -18,18 +18,18 @@ export const CheckoutForm = () => {
         name="name"
         id="name"
         placeholder="Name"
-        className="h-[3rem] text-accent bg-black border-b border-px border-accent focus:outline-none"
+        className="w-full h-[3rem] text-accent bg-black border-b border-px border-accent focus:outline-none"
       />
       <input
         type="text"
         name="lastName"
         id="lastName"
         placeholder="Last Name"
-        className="h-[3rem] text-accent bg-black border-b border-px border-accent focus:outline-none"
-        // style={{
-
-        // }}
+        className="w-full h-[3rem] text-accent bg-black border-b border-px border-accent focus:outline-none"
       />
+      <button className="w-full h-[3rem] p-6 bg-accent text-main flex items-center justify-center rounded uppercase font-bold fade-in">
+        Next
+      </button>
     </form>
   );
 };
