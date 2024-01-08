@@ -1,26 +1,31 @@
 'use client';
 import ReactCalendar from 'react-calendar';
-import './Calendar.css';
-import useFirestore from '@/hooks/useFirestore';
 import { useBookingDate } from '@/store';
-
-interface DateCalendar {
-  justDate: Date | null;
-  dateTime: Date | null;
-}
+import useDateBooked from '@/hooks/useDateBooked';
+import './Calendar.css';
 
 export const Calendar = () => {
-  const [data] = useFirestore({ database: 'bookings' });
-  console.log(data.bookings[0]);
+  const datesBooked = useDateBooked();
   const setBookingDate = useBookingDate((state) => state.setBookingDate);
 
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center">
+    <div className="h-full w-full md:max-w-md  flex flex-col justify-center items-center">
       <ReactCalendar
-        minDate={new Date('ph-Philippines')}
+        minDate={new Date()}
         className="REACT-CALENDAR p-2"
         view="month"
-        onClickDay={(date) => setBookingDate(date)}
+        tileDisabled={({ date, view }) =>
+          view === 'month' && // Block day tiles only
+          datesBooked.some(
+            (dateBooked) =>
+              date.getFullYear() === dateBooked.getFullYear() &&
+              date.getMonth() === dateBooked.getMonth() &&
+              date.getDate() === dateBooked.getDate()
+          )
+        }
+        onClickDay={(date) => {
+          setBookingDate(date);
+        }}
         locale="en-US"
       />
     </div>

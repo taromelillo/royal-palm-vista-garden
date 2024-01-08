@@ -1,21 +1,21 @@
 import { slider } from '@/assets';
-import { Calendar, Checkout, Title } from '@/components';
+import { Calendar, Checkout } from '@/components';
 
 export default function Book() {
   return (
     <div className="">
-      <div className="h-[20rem] block">
+      <section className="h-[20rem] block">
         {/* <h1
           className="relative"
           style={{
-            fontSize: "10rem",
-            textTransform: "uppercase",
+            fontSize: '10rem',
+            textTransform: 'uppercase',
             fontWeight: 800,
-            position: "relative",
-            zIndex: "3",
+            position: 'relative',
+            zIndex: '3',
             lineHeight: 1,
-            top: "25%",
-            left: "20%",
+            top: '25%',
+            left: '20%',
           }}
         >
           Book now
@@ -31,10 +31,11 @@ export default function Book() {
           }}
           alt=""
         />
-      </div>
-      {/* <Title title="Book now" /> */}
-      <Calendar />
-      <Checkout />
+      </section>
+      <section className="flex flex-col md:flex-row justify-center items-center md:justify-evenly">
+        <Calendar />
+        <Checkout />
+      </section>
     </div>
   );
 }

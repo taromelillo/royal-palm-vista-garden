@@ -7,26 +7,23 @@ interface FirestoreProps {
   database: string;
 }
 
-interface Data {
-  id: string;
-  day: string;
-}
+// type Data = {
+//   id: string;
+//   name: string;
+//   day: Date;
+// };
 
 const useFirestore = ({ database }: FirestoreProps) => {
-  const [data, setData] = useState({ bookings: Array<Object>() });
+  const [data, setData] = useState({});
 
-  const getData = (database: string) => {
+  useEffect(() => {
     const collect = collection(db, database);
     getDocs(collect).then((res) => {
       const arrayData = res.docs.map((data) => {
         return { ...data.data(), id: data.id };
       });
-      setData({ bookings: [arrayData] });
+      setData(arrayData);
     });
-  };
-
-  useEffect(() => {
-    getData(database);
   }, [database]);
   return [data];
 };
