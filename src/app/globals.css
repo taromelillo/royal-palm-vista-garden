@@ -48,8 +48,6 @@
 
 *::-webkit-scrollbar-track {
   background-color: none;
-  opacity: 0.5;
-  /* border-radius: 5px; */
 }
 
 *::-webkit-scrollbar-thumb {
