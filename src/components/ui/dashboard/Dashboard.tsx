@@ -1,11 +1,11 @@
 'use client';
+import { useDate } from '@/hooks/useDate';
 
-import useFirestore from '@/hooks/useFirestore';
-import moment from 'moment';
 import { IoTrashOutline } from 'react-icons/io5';
 
 export const Dashboard = () => {
-  const [datesBooked] = useFirestore({ database: 'bookings' });
+  const datesBooked = useDate();
+
   console.log(datesBooked);
   return (
     <div className="w-full h-[700px] bg-red-900">
@@ -20,29 +20,25 @@ export const Dashboard = () => {
           </thead>
 
           <tbody className="w-full h-full">
-            {datesBooked.map((dateBooked) => {
-              return (
-                <tr
-                  key={dateBooked.id}
-                  className="w-full h-[5rem] grid-cols-3 text-center items-center"
-                >
-                  <td>
-                    <p>{dateBooked.name}</p>
-                  </td>
-                  <td>
-                    {moment
-                      .unix(dateBooked.day.seconds)
-                      .toDate()
-                      .toDateString()}
-                  </td>
-                  <td>
-                    <button>
-                      <IoTrashOutline size={33} />
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {datesBooked !== null &&
+              datesBooked.map((data: any) => {
+                return (
+                  <tr
+                    key={data.id}
+                    className="w-full h-[5rem] grid-cols-3 text-center items-center"
+                  >
+                    <td>
+                      <p>{data.name}</p>
+                    </td>
+                    <td>{data.day}</td>
+                    <td>
+                      <button>
+                        <IoTrashOutline size={33} />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       ) : (
