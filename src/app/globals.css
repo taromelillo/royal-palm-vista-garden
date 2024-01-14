@@ -9,16 +9,13 @@
 }
 
 :root {
-  /* --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255; */
-  /* --color-main: #0e4444; */
   --color-main: #092a2a;
   /* --color-accent: #dfab00; */
   --color-accent: #c3b792;
   --color-primary: #cfdbd5;
   --color-secondary: #242423;
   --color-alter-secondary: #333533;
+  --gradient-default: linear(90deg, #c3b792, #242423);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +25,14 @@
     --color-primary: #242423;
     --color-secondary: #cfdbd5;
     --color-alter-secondary: #333533;
+    --gradient-default: linear(90deg, #c3b792, #242423);
   }
+}
+
+.gradient {
+  background: --gradient-default;
+  animation: movingbackground 5s ease-in-out infinite;
+  background-size: 500%;
 }
 
 .animation-reveal {
@@ -58,6 +62,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-accent);
 }
+
+@keyframes movingbackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes reveal {
   from {
     opacity: 0;

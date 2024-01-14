@@ -9,10 +9,14 @@ import {
   IoCloseOutline,
 } from 'react-icons/io5';
 import { Title } from '@/components';
+import { useAdminUser } from '@/store/admin/admin-store';
 
 export function Sidebar() {
   const isSideMenuOpened = useUIStore((state) => state.isSideMenuOpened);
   const closeMenu = useUIStore((state) => state.closeSideMenu);
+  const adminToken = useAdminUser((state) => state.adminToken);
+  const clearAdminUser = useAdminUser((state) => state.clearAdminToken);
+
   return (
     <div>
       {/* Background */}
@@ -36,7 +40,6 @@ export function Sidebar() {
 
       {/* Sidemenu */}
       <nav
-        //todo: slide effect
         className={clsx(
           'fixed p-5 right-0 top-0 w-full sm:w-[500px] h-screen text-accent bg-black z-20 shadow-2xl transform transition-all duration-300',
           {
@@ -51,7 +54,6 @@ export function Sidebar() {
             onClick={() => closeMenu()}
           />
           <Title title="CS Royal Palm Vista Garden" />
-          {/* <h1>CS Royal Palm Vista Garden</h1> */}
         </div>
 
         <div className="w-full h-px bg-accent my-5" />
@@ -72,6 +74,14 @@ export function Sidebar() {
             <IoChatbubbleOutline size={22} />
             <span>FAQ</span>
           </Link>
+          {/* // <div className="h-[4rem] w-full flex justify-center "> */}
+
+          {/* </div> */}
+          {adminToken !== null ?? (
+            <button className="w-full h-[3rem] p-6 bg-accent text-accent flex items-center justify-center rounded uppercase font-bold fade-in">
+              <span>Hola</span>
+            </button>
+          )}
         </div>
       </nav>
     </div>

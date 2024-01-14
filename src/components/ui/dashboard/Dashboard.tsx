@@ -1,16 +1,17 @@
 'use client';
 import { useDate } from '@/hooks/useDate';
+import { Skeleton } from '@nextui-org/skeleton';
+import './Dashboard.css';
 
 import { IoTrashOutline } from 'react-icons/io5';
 
 export const Dashboard = () => {
   const datesBooked = useDate();
 
-  console.log(datesBooked);
   return (
-    <div className="w-full h-[700px] bg-red-900">
+    <div className="w-full h-[700px] p-[1rem]">
       {datesBooked !== undefined ? (
-        <table className="w-full mmin-h-[500px]">
+        <table className="w-full min-h-[500px] fade-in">
           <thead className="w-full h-[5rem] grid-cols-3 border-b border-accent">
             <tr>
               <th>Name</th>
@@ -33,7 +34,7 @@ export const Dashboard = () => {
                     <td>{data.day}</td>
                     <td>
                       <button>
-                        <IoTrashOutline size={33} />
+                        <IoTrashOutline size={23} />
                       </button>
                     </td>
                   </tr>
@@ -42,7 +43,7 @@ export const Dashboard = () => {
           </tbody>
         </table>
       ) : (
-        'nada'
+        <Skeleton className="w-full min-h-[500px] rounded-lg bg-default-300 gradient" />
       )}
     </div>
   );
