@@ -32,7 +32,7 @@ export default function Book() {
           alt=""
         />
       </section>
-      <section className="flex flex-col md:flex-row justify-center items-center md:justify-evenly">
+      <section className="flex flex-col-reverse md:flex-row justify-center items-center md:justify-evenly">
         <Calendar />
         <Checkout />
       </section>

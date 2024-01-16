@@ -8,6 +8,17 @@
   box-size: border-box;
 }
 
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
 :root {
   --color-main: #092a2a;
   /* --color-accent: #dfab00; */
@@ -27,12 +38,6 @@
     --color-alter-secondary: #333533;
     --gradient-default: linear(90deg, #c3b792, #242423);
   }
-}
-
-.gradient {
-  background: --gradient-default;
-  animation: movingbackground 5s ease-in-out infinite;
-  background-size: 500%;
 }
 
 .animation-reveal {

@@ -1,11 +1,13 @@
 'use client';
 import { auth } from '@/config/firebase';
+import { useAdminUser } from '@/store/admin/admin-store';
 import { UserCredential, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { FormEvent, useRef } from 'react';
 
 export const Login = () => {
   const userRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const setAdminToken = useAdminUser((state) => state.setAdminToken);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
@@ -21,6 +23,7 @@ export const Login = () => {
     ).then(async (res: UserCredential) => {
       const uid = await res.user.getIdToken();
       console.log(uid);
+      setAdminToken(uid);
       e.reset();
     });
   };

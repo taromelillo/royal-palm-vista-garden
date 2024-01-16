@@ -9,3 +9,4 @@ export * from './ui/slider/Slider';
 export * from './ui/title/Title';
 export * from './ui/checkout/Checkout';
 export * from './ui/login/Login';
+export * from './ui/admin/AdminDashboard';

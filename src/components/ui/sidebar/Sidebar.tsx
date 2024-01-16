@@ -77,9 +77,9 @@ export function Sidebar() {
           {/* // <div className="h-[4rem] w-full flex justify-center "> */}
 
           {/* </div> */}
-          {adminToken !== null ?? (
-            <button className="w-full h-[3rem] p-6 bg-accent text-accent flex items-center justify-center rounded uppercase font-bold fade-in">
-              <span>Hola</span>
+          {adminToken ?? (
+            <button className="w-full h-[3rem] p-6 bg-main text-accent flex items-center justify-center rounded uppercase font-bold fade-in">
+              <span>Logout</span>
             </button>
           )}
         </div>

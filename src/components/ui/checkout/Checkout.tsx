@@ -10,7 +10,7 @@ export const Checkout = () => {
 
   return (
     <div className="w-full max-w-xl h-[400px] px-[2rem] my-[4rem]">
-      {bookingDate ? (
+      {bookingDate && bookingName ? (
         <div className="w-full h-full flex flex-col justify-between items-center text-accent transition-all duration-300 fade-in">
           <header className="w-full h-[3rem] flex flex-col items-center justify-center gap-4">
             <h2 className="text-xl font-bold uppercase tracking-widest">

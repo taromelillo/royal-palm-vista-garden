@@ -2,10 +2,7 @@ import { IoLogoFacebook } from 'react-icons/io5';
 
 export const Footer = () => {
   return (
-    <footer
-      className="h-24 w-full flex justify-evenly md:justify-between md:p-8 items-center border-t border-accent"
-      // style={{boxShadow: }}
-    >
+    <footer className="h-24 w-full flex justify-evenly md:justify-between md:p-8 items-center border-t border-accent mt-[3rem]">
       CS Royal Palm Vista Garden
       <a href="https://www.facebook.com/Royalpalmvistagarden/">
         <span>

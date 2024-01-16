@@ -179,3 +179,16 @@
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: rgb(238 242 255);
 }
+
+.fade-in {
+  animation: fade 3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
