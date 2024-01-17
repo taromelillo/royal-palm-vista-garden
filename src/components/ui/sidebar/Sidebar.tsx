@@ -42,45 +42,47 @@ export function Sidebar() {
       {/* Sidemenu */}
       <nav
         className={clsx(
-          'fixed p-5 right-0 top-0 w-full sm:w-[500px] h-screen text-accent bg-black z-20 shadow-2xl transform transition-all duration-300',
+          'flex flex-col justify-between fixed p-5 right-0 top-0 w-full sm:w-[500px] h-screen text-accent bg-black z-20 shadow-2xl transform transition-all duration-300',
           {
             'translate-x-full': !isSideMenuOpened,
           }
         )}
       >
-        <div className="flex justify-between items-center w-full h-[44px]">
-          <IoCloseOutline
-            size={44}
-            className="absolute top-5 right-5 cursor-pointer"
-            onClick={() => closeMenu()}
-          />
-          <Title title="CS Royal Palm Vista Garden" />
-        </div>
+        <div>
+          <div className="flex justify-between items-center w-full h-[44px]">
+            <IoCloseOutline
+              size={44}
+              className="absolute top-5 right-5 cursor-pointer"
+              onClick={() => closeMenu()}
+            />
+            <Title title="CS Royal Palm Vista Garden" />
+          </div>
 
-        <div className="w-full h-px bg-accent my-5" />
-        <div className="relative mt-14">
-          <Link
-            href="/book"
-            className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
-            onClick={closeMenu}
-          >
-            <IoCalendarClearOutline size={22} />
-            <span>Book</span>
-          </Link>
-          <Link
-            href="/"
-            className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
-            onClick={closeMenu}
-          >
-            <IoChatbubbleOutline size={22} />
-            <span>FAQ</span>
-          </Link>
+          <div className="w-full h-px bg-accent my-5" />
+          <div className="relative mt-14">
+            <Link
+              href="/book"
+              className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
+              onClick={closeMenu}
+            >
+              <IoCalendarClearOutline size={22} />
+              <span>Book</span>
+            </Link>
+            <Link
+              href="/"
+              className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
+              onClick={closeMenu}
+            >
+              <IoChatbubbleOutline size={22} />
+              <span>FAQ</span>
+            </Link>
+          </div>
         </div>
         {adminToken && (
-          <div className="h-[4rem] w-full flex justify-center relative bottom-0">
+          <div className="h-[4rem] w-full flex justify-center bottom-0">
             <button
               onClick={handleLogout}
-              className="w-full h-[3rem] p-6 bg-main text-accent flex items-center justify-center rounded uppercase font-bold fade-in"
+              className="w-full h-[3rem] p-6 bg-accent text-main flex items-center justify-center rounded uppercase font-bold fade-in"
             >
               <span>Logout</span>
             </button>
