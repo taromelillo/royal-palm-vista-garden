@@ -24,8 +24,8 @@ export const Login = () => {
       const uid = await res.user.getIdToken();
       console.log(uid);
       setAdminToken(uid);
-      e.reset();
     });
+    e.reset();
   };
 
   return (

@@ -1,5 +1,4 @@
 'use client';
-
 import { useUIStore } from '@/store';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -10,12 +9,18 @@ import {
 } from 'react-icons/io5';
 import { Title } from '@/components';
 import { useAdminUser } from '@/store/admin/admin-store';
+import { auth } from '@/config/firebase';
 
+console.log(auth.currentUser);
 export function Sidebar() {
   const isSideMenuOpened = useUIStore((state) => state.isSideMenuOpened);
   const closeMenu = useUIStore((state) => state.closeSideMenu);
   const adminToken = useAdminUser((state) => state.adminToken);
   const clearAdminUser = useAdminUser((state) => state.clearAdminToken);
+  const handleLogout = () => {
+    auth.signOut();
+    clearAdminUser();
+  };
 
   return (
     <div>
@@ -24,11 +29,7 @@ export function Sidebar() {
 
       {/* Blur */}
       {isSideMenuOpened && (
-        <div
-          className={
-            'fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30'
-          }
-        />
+        <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" />
       )}
 
       {isSideMenuOpened && (
@@ -74,15 +75,17 @@ export function Sidebar() {
             <IoChatbubbleOutline size={22} />
             <span>FAQ</span>
           </Link>
-          {/* // <div className="h-[4rem] w-full flex justify-center "> */}
-
-          {/* </div> */}
-          {adminToken ?? (
-            <button className="w-full h-[3rem] p-6 bg-main text-accent flex items-center justify-center rounded uppercase font-bold fade-in">
+        </div>
+        {adminToken && (
+          <div className="h-[4rem] w-full flex justify-center relative bottom-0">
+            <button
+              onClick={handleLogout}
+              className="w-full h-[3rem] p-6 bg-main text-accent flex items-center justify-center rounded uppercase font-bold fade-in"
+            >
               <span>Logout</span>
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </nav>
     </div>
   );
