@@ -2,12 +2,12 @@
 import { useBookingDate } from '@/store';
 import { CheckoutForm } from '../checkoutForm/CheckoutForm';
 import './Checkout.css';
+import WhatsappTemplate from '@/utlis/WhatsAppTemplate';
 
 export const Checkout = () => {
   const bookingDate = useBookingDate((state) => state.bookingDate);
   const bookingName = useBookingDate((state) => state.bookingName);
-  // const =
-
+  const { url } = WhatsappTemplate({ day: bookingDate, name: bookingName });
   return (
     <div className="w-full max-w-xl h-[400px] px-[2rem] my-[4rem]">
       {bookingDate && bookingName ? (
@@ -32,7 +32,7 @@ export const Checkout = () => {
           </main>
           <footer className="w-full ">
             <button className="w-full h-[3rem] p-6 bg-accent text-main flex items-center justify-center rounded uppercase font-bold fade-in">
-              <a href="">Book Now</a>
+              <a href={url}>Book Now</a>
             </button>
           </footer>
         </div>

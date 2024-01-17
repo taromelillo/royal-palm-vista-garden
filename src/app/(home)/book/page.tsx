@@ -22,7 +22,7 @@ export default function Book() {
         </h1> */}
         <img
           src={`${slider[0]}`}
-          className="object-cover object-center absolute top-0 left-0 bottom-0"
+          className="object-cover object-bottom absolute top-0 left-0 bottom-0"
           style={{
             width: '100%',
             height: '25rem',
