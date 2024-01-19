@@ -69,7 +69,7 @@ export function Sidebar() {
               <span>Book</span>
             </Link>
             <Link
-              href="/"
+              href="/faq"
               className="flex items-center mt-10 p-2 hover:bg-main rounded transition-all gap-4 font-bold"
               onClick={closeMenu}
             >

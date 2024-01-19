@@ -10,3 +10,4 @@ export * from './ui/title/Title';
 export * from './ui/checkout/Checkout';
 export * from './ui/login/Login';
 export * from './ui/admin/AdminDashboard';
+export * from './ui/map/Map';
