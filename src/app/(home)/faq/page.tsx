@@ -2,7 +2,7 @@ import { Map } from '@/components';
 
 export default function Faq() {
   return (
-    <div>
+    <div className="w-full h-screen">
       <Map />
     </div>
   );
