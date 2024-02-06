@@ -11,3 +11,4 @@ export * from './ui/checkout/Checkout';
 export * from './ui/login/Login';
 export * from './ui/admin/AdminDashboard';
 export * from './ui/map/Map';
+export * from './ui/info/Info';
