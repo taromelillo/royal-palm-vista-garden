@@ -46,22 +46,27 @@ h4 {
   animation-range: entry 20% cover 30%;
 }
 
-* {
+/* * {
   scrollbar-width: thin;
-  scrollbar-color: var(--secondary) var(--primary);
+  scrollbar-color: #c3b792 #092a2a;
+  scrollbar-button: none;
+} */
+
+::-webkit-scrollbar-button {
+  display: none;
 }
 
-*::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 7px;
 }
 
-*::-webkit-scrollbar-track {
-  background-color: none;
+::-webkit-scrollbar-track {
+  background-color: 'black';
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: var(--color-accent);
-  border-radius: 3px;
+::-webkit-scrollbar-thumb {
+  background-color: #c3b792;
+  border-radius: 7px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
