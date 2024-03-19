@@ -8,7 +8,7 @@ import {
   IoCloseOutline,
 } from 'react-icons/io5';
 import { Title } from '@/components';
-import { useAdminUser } from '@/store/admin/admin-store';
+import { useAdminUser } from '@/store/admin/useAdminStore';
 import { auth } from '@/config/firebase';
 
 export function Sidebar() {

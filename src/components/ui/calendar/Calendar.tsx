@@ -1,8 +1,9 @@
 'use client';
 import ReactCalendar from 'react-calendar';
-import { useBookingDate } from '@/store';
 import useDateBooked from '@/hooks/useDateBooked';
 import './Calendar.css';
+import { useBookingDate } from '@/store';
+import { InfinitySpin } from 'react-loader-spinner';
 
 export const Calendar = () => {
   const datesBooked = useDateBooked();
@@ -10,12 +11,12 @@ export const Calendar = () => {
   const isLoaded = datesBooked.length !== 0;
 
   return (
-    <div className="h-[400px] w-full md:max-w-md  flex flex-col justify-center items-center">
+    <div className='h-[400px] w-full md:max-w-md  flex flex-col justify-center items-center'>
       {isLoaded ? (
         <ReactCalendar
           minDate={new Date()}
-          className="REACT-CALENDAR p-2 fade-in"
-          view="month"
+          className='REACT-CALENDAR p-2 fade-in'
+          view='month'
           tileDisabled={({ date, view }) =>
             view === 'month' && // Block day tiles only
             datesBooked.some(
@@ -28,10 +29,12 @@ export const Calendar = () => {
           onClickDay={(date) => {
             setBookingDate(date);
           }}
-          locale="en-US"
+          locale='en-US'
         />
       ) : (
-        <div className="h-full w-full"></div>
+        <div className='h-[400px] w-full md:max-w-md flex flex-col justify-center items-center'>
+          <InfinitySpin color='#c3b792' width='200' />
+        </div>
       )}
     </div>
   );

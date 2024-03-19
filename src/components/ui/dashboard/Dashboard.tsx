@@ -1,50 +1,40 @@
 'use client';
-import { useDate } from '@/hooks/useDate';
-import { Skeleton } from '@nextui-org/skeleton';
+
+import { useFetchBookings, useFetchPrices } from '@/hooks';
 import './Dashboard.css';
 
-import { IoTrashOutline } from 'react-icons/io5';
+import { Bookings } from '../bookings/Bookings';
+import { BookingForm } from '../bookings/BookingForm';
+import { Prices } from '../prices/Prices';
+import { PriceForm } from '../prices/PriceForm';
 
 export const Dashboard = () => {
-  const datesBooked = useDate();
+  const { bookings: datesBooked } = useFetchBookings();
+  const { prices } = useFetchPrices();
 
   return (
-    <div className="w-full h-[700px] p-[1rem]">
-      {datesBooked !== undefined ? (
-        <table className="w-full min-h-[500px] fade-in">
-          <thead className="w-full h-[5rem] grid-cols-3 border-b border-accent">
-            <tr>
-              <th>Name</th>
-              <th>Day</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
+    <section className='max-w-[1000px] mt-24 w-full flex flex-col mx-auto min-h-[700px] items-center p-[1rem] gap-14'>
+      <PriceForm />
 
-          <tbody className="w-full h-full">
-            {datesBooked !== null &&
-              datesBooked.map((data: any) => {
-                return (
-                  <tr
-                    key={data.id}
-                    className="w-full h-[5rem] grid-cols-3 text-center items-center"
-                  >
-                    <td>
-                      <p>{data.name}</p>
-                    </td>
-                    <td>{data.day}</td>
-                    <td>
-                      <button>
-                        <IoTrashOutline size={23} />
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
-      ) : (
-        <Skeleton className="w-full min-h-[500px] rounded-lg bg-default-300 gradient" />
-      )}
-    </div>
+      <h3 className='uppercase text-accent text-lg my-6 text-center'>
+        Pricing List
+      </h3>
+
+      {prices &&
+        prices.map((price) => {
+          return <Prices data={price} key={price.id} />;
+        })}
+
+      <div className='w-full h-[1px] bg-accent' />
+      <BookingForm />
+
+      <h3 className='uppercase text-accent text-lg my-6 text-center'>
+        Bookings List
+      </h3>
+      {datesBooked &&
+        datesBooked.map((booking) => {
+          return <Bookings data={booking} key={booking.id} />;
+        })}
+    </section>
   );
 };

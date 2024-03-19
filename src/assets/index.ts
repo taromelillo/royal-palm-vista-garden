@@ -14,6 +14,7 @@ export const slider = [
   'https://res.cloudinary.com/didni0nof/image/upload/v1705398736/samples/rpvg-assets/WhatsApp_Image_2024-01-14_at_02.05.14_1_wqp1o6.jpg',
   'https://res.cloudinary.com/didni0nof/image/upload/v1705398734/samples/rpvg-assets/WhatsApp_Image_2024-01-14_at_02.05.15_3_rscc8u.jpg',
   'https://res.cloudinary.com/didni0nof/image/upload/v1705398735/samples/rpvg-assets/WhatsApp_Image_2024-01-14_at_02.05.15_ann3ae.jpg',
+  'https://res.cloudinary.com/didni0nof/image/upload/v1703897826/samples/rpvg-assets/rpvg7_axpkza.jpg',
 ];
 // , cheers7, pool2, image4
 

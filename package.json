@@ -12,13 +12,17 @@
     "@nextui-org/skeleton": "^2.0.24",
     "clsx": "^2.0.0",
     "firebase": "^10.7.1",
+    "formik": "^2.4.5",
     "moment": "^2.30.1",
     "next": "14.0.4",
     "react": "^18",
     "react-calendar": "^4.7.0",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-loader-spinner": "^6.1.6",
+    "sweetalert2": "^11.10.6",
     "swiper": "^11.0.5",
+    "yup": "^1.4.0",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
