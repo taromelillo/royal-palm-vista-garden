@@ -27,7 +27,7 @@ export const Checkout = () => {
             </div>
             <div className='w-full flex justify-between items-center'>
               <p>Price:</p>
-              <p>{`price`}</p>
+              <p>4000</p>
             </div>
           </main>
           <footer className='w-full '>
