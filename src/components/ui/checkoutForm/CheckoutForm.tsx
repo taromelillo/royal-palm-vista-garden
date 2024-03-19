@@ -1,10 +1,10 @@
 'use client';
 
-// import { useBookingDate } from '@/store';
+import { useBookingDate } from '@/store';
 import { FormEvent, useRef } from 'react';
 
 export const CheckoutForm = () => {
-  // const setBookingName = useBookingDate((state) => state.setBookingName);
+  const setBookingName = useBookingDate((state) => state.setBookingName);
   const name = useRef<HTMLInputElement>(null);
   const lastName = useRef<HTMLInputElement>(null);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -13,7 +13,7 @@ export const CheckoutForm = () => {
     if (name.current === null || lastName.current === null)
       throw Error('Booking Form Error: please fill the input fields. . . ');
     const fullname = `${name.current.value} ${lastName.current.value}`;
-    // setBookingName(fullname);
+    setBookingName(fullname);
     e.reset();
   };
   return (
